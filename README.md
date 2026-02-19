@@ -78,11 +78,13 @@ python3 main.py
 
 毎朝5時55分に実行する例
 
-cron.txtを編集
+`cron.txt` を編集
 
 ```
 55 5 * * * /path/to/.venv/bin/python /path/to/weather-bot/main.py
 ```
+
+登録。
 
 ```sh
 crontab cron.txt
@@ -94,7 +96,9 @@ crontab cron.txt
 crontab -l
 ```
 
-## 出力
+## 天気情報の出力
+
+5時55分に実行した例
 
 ```
 件名：weather-bot
