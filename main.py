@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from datetime import datetime
 from config import *
 
-TARGET_HOURS = set(range(0, 24, 3))  # 6時、9時、12時、15時、18時、21時
+TARGET_HOURS = set(range(0, 24, 3))
 
 def get_weather():
     url = "https://api.openweathermap.org/data/2.5/forecast"
@@ -23,7 +23,7 @@ def get_weather():
         if dt.hour in TARGET_HOURS:
             temp = item["main"]["temp"]
             description = item["weather"][0]["description"]
-            lines.append(f"{dt.strftime('%H時')}：{description}、{temp:.1f}度")
+            lines.append(f"{dt.strftime('%H時')} {description} {temp:.1f}度")
         if len(lines) == 8:
             break
     return "\n".join(lines)
